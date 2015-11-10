@@ -1,18 +1,7 @@
 //colors
-$color_picton_blue_approx:#50c0fb;
-$white:#fff;
-$color_picton_blue_50_approx:rgba(72,172,226,.5);
-$white_50:rgba(255,255,255,.5);
-$black:#000;$black_10:rgba(0,0,0,.1);
-$color_mountain_mist_approx:#999;
-$color_alto_approx:#ddd;
-$color_silver_approx:#bcbcbc;
-$color_tango_approx:#e66b20;
-//fonts
-$font_0:微软雅黑;
-//urls
-$url_0:url(../img/bg.jpg);
-$url_1:url(../img/logo.png);
+$color_picton_blue_approx:#50c0fb;$white:#fff;$color_picton_blue_50_approx:rgba(72,172,226,.5);$white_50:rgba(255,255,255,.5);$black:#000;$black_10:rgba(0,0,0,.1);$color_mountain_mist_approx:#999;$color_alto_approx:#ddd;$color_silver_approx:#bcbcbc;$color_tango_approx:#e66b20;//fonts
+$font_0:微软雅黑;//urls
+$url_0:url(../img/bg.jpg);$url_1:url(../img/logo.png);
 //@extend-elements
 //original selectors
 //.cd-dropdown ul li span,.cd-dropdown >span
@@ -94,65 +83,25 @@ html,body,.h100{height:100%;}
     }
   }
 }
-.cd-dropdown{@extend %extend_2;
-  > span{@extend %extend_1;//Instead of the line below you could use @include box-shadow($shadow-1,$shadow-2,$shadow-3,$shadow-4,$shadow-5,$shadow-6,$shadow-7,$shadow-8,$shadow-9,$shadow-10)
-    box-shadow:0 1px 1px $black_10;display:block;width:100%;height:40px;line-height:60px;color:$color_mountain_mist_approx;font-size:16px;padding:0 50px 0 30px;position:relative;//Instead of the line below you could use @include user-select($select)
-    user-select:none;
-    &:after{text-align:center;content:'\25BC';position:absolute;right:0;top:15%;width:50px;font-size:12px;padding:10px;height:70%;line-height:24px;border-left:1px solid $color_alto_approx;}
-    span[class*=" icon-"]{padding:0 30px 0 45px;}
-    span[class^=icon-]{padding:0 30px 0 45px;}
-  }
-  ul{list-style-type:none;margin:0;padding:0;display:block;position:relative;position:absolute;top:0;width:100%;
-    li{//Instead of the line below you could use @include box-shadow($shadow-1,$shadow-2,$shadow-3,$shadow-4,$shadow-5,$shadow-6,$shadow-7,$shadow-8,$shadow-9,$shadow-10)
-      box-shadow:0 1px 1px $black_10;display:block;position:absolute;width:100%;pointer-events:none;
-      span{@extend %extend_1;width:100%;line-height:60px;padding:0 30px 0 75px;display:block;color:$color_silver_approx;//Instead of the line below you could use @include user-select($select)
-      user-select:none;}
-    }
-  }
-  &.cd-active > span:after{content:'\25B2';}
-}
-.cd-select{@extend %extend_2;border:1px solid $color_alto_approx;}
-.cd-active.cd-dropdown{> span{color:$color_picton_blue_approx;}
-  ul li{pointer-events:auto;
-    span{//Instead of the line below you could use @include transition($transition-1,$transition-2,$transition-3,$transition-4,$transition-5,$transition-6,$transition-7,$transition-8,$transition-9,$transition-10)
-      transition:all .2s linear 0s;
-      &:hover{background:$color_tango_approx;color:$white;}
-    }
-  }
-}
-//colors
-$color_mountain_mist_approx:#999;$white:#fff;$color_alto_approx:#ddd;$color_silver_approx:#bcbcbc;$black_10:rgba(0,0,0,0.1);$color_tango_approx:#e66b20;
-//@extend-elements
-//original selectors
-//.cd-dropdown,.cd-select
-%extend_1{position:relative;width:300px;margin:0 auto;display:block;}
-.cd-dropdown{@extend %extend_1;
-  > span{width:100%;height:40px;line-height:40px;color:$color_mountain_mist_approx;font-weight:700;font-size:16px;background:$white;display:block;padding:0 50px 0 30px;position:relative;cursor:pointer;//Instead of the line below you could use @include user-select($select)
-    user-select:none;//Instead of the line below you could use @include box-shadow($shadow-1,$shadow-2,$shadow-3,$shadow-4,$shadow-5,$shadow-6,$shadow-7,$shadow-8,$shadow-9,$shadow-10)
-    box-shadow:0 1px 1px $black_10;&:before{
-        margin:0 1rem 0;}
-    &:after{content:'\25BC';position:absolute;right:0;top:15%;width:50px;text-align:center;font-size:12px;padding:10px;height:70%;line-height:10px;border-left:1px solid $color_alto_approx;}
-    span[class^="icon-"]{padding:0 30px 0 45px;}
-    span[class*=" icon-"]{padding:0 30px 0 45px;}
-  }
-  ul{list-style-type:none;margin:0;padding:0;display:block;position:relative;position:absolute;top:0;width:100%;
-    li{display:block;position:absolute;width:100%;pointer-events:none;//Instead of the line below you could use @include box-shadow($shadow-1,$shadow-2,$shadow-3,$shadow-4,$shadow-5,$shadow-6,$shadow-7,$shadow-8,$shadow-9,$shadow-10)
-      box-shadow:0 1px 1px $black_10;
-      span{width:100%;background:$white;line-height:40px;padding:0 30px 0 30px;display:block;color:$color_silver_approx;cursor:pointer;font-weight:700;//Instead of the line below you could use @include user-select($select)
-      user-select:none;}
-    }
-  }
-  &.cd-active > span:after{content:'\25B2';}
-}
-.cd-select{@extend %extend_1;border:1px solid $color_alto_approx;}
-.cd-active.cd-dropdown{> span{color:$color_picton_blue_approx;}
-  ul li{pointer-events:auto;
-    span{//Instead of the line below you could use @include transition($transition-1,$transition-2,$transition-3,$transition-4,$transition-5,$transition-6,$transition-7,$transition-8,$transition-9,$transition-10)
-      transition:all 0.2s linear 0s;
-      &:hover{background:$color_picton_blue_approx;color:$white;}
-    }
-  }
-}
-.fa:before{
-        margin:0 1rem 0;
-      }
+div.cs-select{display:inline-block;vertical-align:middle;position:relative;text-align:left;background:#fff;z-index:100;width:100%;max-width:500px;-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}
+div.cs-select:focus{outline:none; /* For better accessibility add a style for this in your skin */}
+.cs-select select{display:none;}
+.cs-select span{display:block;position:relative;cursor:pointer;padding:1em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+
+/* Placeholder and selected option */
+.cs-select > span{padding-right:3em;}
+.cs-select > span::after,.cs-select .cs-selected span::after{speak:none;position:absolute;top:50%;-webkit-transform:translateY(-50%);transform:translateY(-50%);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
+.cs-select > span::after{content:'\25BE';right:1em;}
+.cs-select .cs-selected span::after{content:'\2713';margin-left:1em;}
+.cs-select.cs-active > span::after{-webkit-transform:translateY(-50%) rotate(180deg);transform:translateY(-50%) rotate(180deg);}
+
+/* Options */
+.cs-select .cs-options{position:absolute;overflow:hidden;width:100%;background:#fff;visibility:hidden;}
+.cs-select.cs-active .cs-options{visibility:visible;}
+.cs-select ul{list-style:none;margin:0;padding:0;width:100%;}
+.cs-select ul span{padding:1em;}
+.cs-select ul li.cs-focus span{background-color:#ddd;}
+
+/* Optgroup and optgroup label */
+.cs-select li.cs-optgroup ul{padding-left:1em;}
+.cs-select li.cs-optgroup > span{cursor:default;}
