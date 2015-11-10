@@ -1,39 +1,4 @@
-$(".cd-dropdown").change(function() {
-  var value = $(".cd-dropdown").text();
-  if (value == "单选") {
-    $(".file").show();
-    $(".txt").hide();
-  } else if (value == "txt") {
-    $(".file").hide();
-    $(".txt").show();
-
-  }
-});
-$(".selector-1").change(function() {
-  if ($(".selector-1").val() == "") {
-    $(".single").hide();
-    $(".fill").hide();
-
-  } else {
-    var value = $(".selector-1").val();
-    if (value == "fill") {
-      $(".single").show();
-      $(".fill").hide();
-    } else if (value == "single") {
-      $(".single").hide();
-      $(".fill").show();
-    }
-  }
-});
-
-// dropdown========================================================================================
-// dropdown========================================================================================
-// dropdown========================================================================================
-// dropdown========================================================================================
-// dropdown========================================================================================
-
-;
-(function($, window, undefined) {
+;(function($, window, undefined) {
 
   'use strict';
 

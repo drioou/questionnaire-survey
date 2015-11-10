@@ -6,12 +6,7 @@
     <title>问卷制作-学而思培优</title>
     <meta name="author" content="duanyong">
     <link href="http://www.speiyou.com/images/favicon.ico" type="image/x-icon" rel="icon">
-    <!-- <meta name="viewport"content="width=device-width,initial-scale=1,maximum-scale=1"> -->
-    <!-- <link href="https://cdn.bootcss.com/jquery-mobile/1.4.5/jquery.mobile.min.css"rel="stylesheet"> -->
-    <link href="http://cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.bootcss.com/bootstrap-material-design/0.3.0/css/material.min.css" rel="stylesheet">
-    <!-- <link href="http://cdn.bootcss.com/bootstrap-material-design/0.3.0/css/ripples.min.css"rel="stylesheet"> -->
     <link type="text/css" rel="stylesheet" href="css/main.css">
 </head>
 
@@ -129,20 +124,22 @@
     </div>
     <script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <!-- // <script src="http://cdn.bootcss.com/bootstrap-material-design/0.3.0/js/material.min.js"></script> -->
-    <!-- // <script src="http://cdn.bootcss.com/bootstrap-material-design/0.3.0/js/ripples.min.js"></script> -->
-    <!-- // <script src="https://cdn.bootcss.com/jquery-mobile/1.4.5/jquery.mobile.min.js"></script> -->
     <script src="js/modernizr.custom.63321.js"></script>
     <script src="js/main.js"></script>
-    <script type="text/javascript">
+    <script>
+            (function() {
+                [].slice.call( document.querySelectorAll( 'select.cs-select' ) ).forEach( function(el) {
+                    new SelectFx(el);
+                } );
+            })();
+        </script>
 
-    </script>
-    <!-- <div class="none">
+    <div class="none">
 <script>
 var _hmt = _hmt || [];
 (function(){var hm = document.createElement("script");hm.src ="//hm.baidu.com/hm.js?5f0e1e216489020e2ad3c7110687efd9";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm,s);}
 )();</script>
-</div> -->
+</div>
 </body>
 
 </html>
