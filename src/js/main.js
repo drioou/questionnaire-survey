@@ -262,6 +262,7 @@
           $(txtparent).find(".txt").show();
           $(txtparent).find(".file").hide();
         }
+
       }
       classie.remove(this.selEl, 'cs-active');
     } else {
@@ -270,6 +271,7 @@
         this.selPlaceholder.textContent = this.selectedOpt.textContent;
       }
       classie.add(this.selEl, 'cs-active');
+      // $(classie).css({"height":"10px" });
     }
   }
 
@@ -337,8 +339,19 @@
 
 })(window);
 
-(function() {
+var createSelect = function() {
   [].slice.call(document.querySelectorAll('select.cs-select')).forEach(function(el) {
     new SelectFx(el);
   });
-})();
+};
+createSelect();
+
+$(".btn.add").on("click", function() {
+  $(this).after("<div class='form-group q3'><select class='cs-select cs-skin-underline'><option value=' disabled='disabled' selected='selected'>请选择</option><option value='1' class='fa fa-check-square-o'>单选</option><option value='2' class='fa fa fa-pencil'>填空</option></select><div class='single'><div class='form-group'><div class='input-group title'><span class='input-group-addon'>填空标题</span> <input type='text' class='form-control'></div></div><div class='form-group'><button type='submit' class='btn'>保存</button></div></div><div class='fill'><div class='form-group'><div class='input-group title'><span class='input-group-addon'>单选标题</span> <input type='text' class='form-control'></div></div><div class='form-group'><div class='input-group'><span class='input-group-addon'>选项A</span> <input type='text' class='form-control'></div></div><div class='form-group'><div class='input-group'><span class='input-group-addon'>选项B</span> <input type='text' class='form-control'></div></div><div class='form-group'><div class='input-group'><span class='input-group-addon'>选项C</span> <input type='text' class='form-control'></div></div><div class='form-group'><div class='input-group'><span class='input-group-addon'>选项D</span> <input type='text' class='form-control'></div></div><div class='form-group'><button type='submit' class='btn'>保存</button></div></div></div>");
+  ($(this).next().find('select.cs-select')).ready(function(el) {
+    new SelectFx(el);
+  });
+
+
+
+});
