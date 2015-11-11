@@ -3,8 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>问卷制作-学而思培优</title>
+    <title>问卷标题-学而思培优</title>
     <meta name="author" content="duanyong">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+
     <link href="http://www.speiyou.com/images/favicon.ico" type="image/x-icon" rel="icon">
     <link href="http://cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
@@ -15,53 +17,17 @@
     <div class="questionnaire">
         <div class="content">
             <div class="con-top">
-                <div class="title">问卷制作</div>
+                <div class="title">问题标题</div>
                 <div class="logo">
                     <a href="http://ssh.speiyou.com"></a>
                 </div>
             </div>
+            <div class="con-p">这里是目的</div>
+            <div class="border1"></div>
             <div class="con">
-                <div class="form-group q1">
-                    <div class="input-group">
-                        <span class="input-group-addon">问卷题目</span>
-                        <input type="text" class="form-control">
-                    </div>
-                </div>
-                <div class="form-group q2">
-                    <div class="input-group">
-                        <span class="input-group-addon">问卷目的</span>
-                        <textarea class="form-control" rows="3" id="textArea"></textarea>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <button type="submit" class="btn"> 保存</button>
-                </div>
-                <div class="border1"></div>
-                <div class="btn add"><i class="fa fa-plus"></i>增加题目</div>
-                <div class="form-group q3">
-                    <select class="form-control selector-1">
-                        <option value="">请选择</option>
-                        <option value="single">单选</option>
-                        <option value="fill">填空</option>
-                    </select>
-                    <div class="single">
-                        <div class="form-group">
-                            <div class="input-group title">
-                                <span class="input-group-addon ">填空标题</span>
-                                <input type="text" class="form-control">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <button type="submit" class="btn">保存</button>
-                        </div>
-                    </div>
-                    <div class="fill">
-                        <div class="form-group">
-                            <div class="input-group title">
-                                <span class="input-group-addon ">单选标题</span>
-                                <input type="text" class="form-control">
-                            </div>
-                        </div>
+                <div class="form-group q3 show">
+                    <div class="fill show">
+                        <div class="con-pic"></div>
                         <div class="form-group">
                             <div class="input-group">
                                 <span class="input-group-addon">选项A</span>
@@ -86,40 +52,52 @@
                                 <input type="text" class="form-control">
                             </div>
                         </div>
-                        <div class="form-group">
-                            <button type="submit" class="btn">保存</button>
-                        </div>
                     </div>
                 </div>
                 <div class="border1"></div>
-                <div class="btn white">回馈资料</div>
-                <div class="form-group q3 q4">
-                    <select class="form-control selector">
-                        <option value="">请选择</option>
-                        <option value="file">文档</option>
-                        <option value="txt">文字</option>
-                    </select>
-                    <div class="file">
-                        <div class="form-group">
-                            <input defaultValue="上传" type="file" id="inputFile" type="submit"></input>
-                            <button type="submit" class="btn">提交</button>
-                        </div>
-                    </div>
-                    <div class="txt">
+                <div class="form-group q3 show">
+                    <div class="fill show">
+                        <div class="con-pic"></div>
                         <div class="form-group">
                             <div class="input-group">
-                                <span class="input-group-addon">文字</span>
-                                <textarea class="form-control" rows="3" id="textArea"></textarea>
+                                <span class="input-group-addon">选项A</span>
+                                <input type="text" class="form-control">
                             </div>
-                            <div class="form-group">
-                                <button type="submit" class="btn"> 保存</button>
-                                <br>
-                                <button class="btn"> 生成链接</button>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">选项B</span>
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">选项C</span>
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">选项D</span>
+                                <input type="text" class="form-control">
                             </div>
                         </div>
                     </div>
                 </div>
+                <div class="form-group q3 content">
+                    <div class="input-group">
+                        <span class="input-group-addon">填空</span>
+                        <input type="text" class="form-control">
+                    </div>
+                    <textarea class="form-control" rows="3" id="textArea"></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn"> <a href="final.html">提交</a></button>
+                    <br>
+                </div>
+                <div class="make"><i class="fa fa-copyright"></i>学而思培优(上海市场部)</div>
             </div>
+
         </div>
     </div>
     <div class="none">

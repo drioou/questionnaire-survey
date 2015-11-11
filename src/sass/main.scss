@@ -9,16 +9,24 @@ $url_0:url(../img/bg.jpg);$url_1:url(../img/logo.png);
 //original selectors
 //.cd-dropdown,.cd-select
 %extend_2{position:relative;width:300px;margin:20px auto;display:block;}
+a{color:#fff;width:100%;height:100%;display:block;
+  &:hover{text-decoration:none;color:#fff;}
+}
 @charset "UTF-8";
 html,body,.h100{height:100%;}
 .none{display:none;}
-.questionnaire{background:$url_0 top center no-repeat;background-size:cover;font-family:$font_0;
+.questionnaire{background:$url_0 top center no-repeat;background-size:cover;font-family:$font_0;display:flex;align-items:center;
   .content{max-width:500px;margin:0 auto;
-    .con-p{background:#fff;padding:1rem;margin:1rem 0;border-radius:.5rem;text-indent:2em;}
-    .con{padding:0 1rem 8rem;
+    .make{color:#fff;text-align:center;width:100%;}
+    .con-p{background:rgba(255,255,255,.8);padding:1rem;margin:1rem 0;border-radius:.5rem;text-indent:2em;font-weight:bolder;}
+    .con{padding:0 0 3rem 0;
+      .q3.content{.input-group{background:#fff;margin:0 0 1rem;}
+      }
       .q3{padding:2rem;//Instead of the line below you could use @include border-radius($radius,$vertical-radius)
         border-radius:.5rem;background:$color_picton_blue_50_approx;
-        .fill{display:none;}
+        .con-pic{background:rgba(255,255,255,1);padding:1rem;margin:0 0 1rem 0;border-radius:.5rem;text-indent:2em;height:10rem;font-weight:bolder;}
+        .fill,.pic,.video{display:none;}
+        .fill.show{display:block;}
         .single{display:none;}
         .form-control{background:$white;text-align:center;margin:0 0 2rem;
           option{text-align:center;}
@@ -26,18 +34,19 @@ html,body,.h100{height:100%;}
         .ui-btn{padding:0;border:none;
           span{color:$color_picton_blue_approx;}
         }
-        .form-group .input-group{background:$white;
-          &.title{background:0 0;
-            .input-group-addon{background:0 0;}
-            .form-control{margin:0;background:$white;//Instead of the line below you could use @include border-radius($radius,$vertical-radius)
-            border-radius:.5rem;}
+        .form-group{.input-group{background:$white;
+            &.title{background:0 0;
+              .input-group-addon{background:0 0;}
+              .form-control{margin:0;background:$white;//Instead of the line below you could use @include border-radius($radius,$vertical-radius)
+              border-radius:.5rem;}
+            }
+            .form-control{margin:0;}
           }
-          .form-control{margin:0;}
         }
       }
-      .q4{.file{display:none;
-          input{color:$white;display:inline;}
-        }
+      .q4{margin:0 0 10rem 0;
+        input{margin:.5rem 0 1rem 0;}
+        .file{display:none;}
         .txt{display:none;
           .input-group{background:0 0;
             .input-group-addon{background:0 0;color:$white;}
@@ -58,9 +67,10 @@ html,body,.h100{height:100%;}
         }
         &.white{background:$white;color:$color_picton_blue_approx;}
       }
-      .border1{border-bottom:1px dashed $white;margin:1rem -1rem;}
-      .form-group{text-align:center;position: relative;
-        .close{position: absolute;right:1%;top:1%;color:#fff;opacity: 1;}
+      .con-p{height:5rem;}
+      .border1{border-bottom:1px dashed $white;margin:1rem 0;}
+      .form-group{text-align:center;position:relative;
+        .close{position:absolute;right:1%;top:1%;color:#fff;opacity:1;}
         .input-group{background:$white_50;//Instead of the line below you could use @include border-radius($radius,$vertical-radius)
           border-radius:.5rem;
           .input-group-addon{background:$color_picton_blue_approx;color:$white;//Instead of the line below you could use @include border-radius($radius,$vertical-radius)
@@ -80,15 +90,14 @@ html,body,.h100{height:100%;}
     }
     .con-top{.title{color:$color_picton_blue_approx;font-weight:700;font-size:3rem;text-align:center;padding:5% 0;border-bottom:1px solid $white;//Instead of the line below you could use @include text-shadow($shadow-1,$shadow-2,$shadow-3,$shadow-4,$shadow-5,$shadow-6,$shadow-7,$shadow-8,$shadow-9,$shadow-10)
       text-shadow:none;}
+      .title.h10{font-size:8rem;}
       .logo{height:12rem;margin:2rem 0 .5rem;background:$url_1 center no-repeat;background-size:contain;}
     }
   }
 }
 div.cs-select{display:inline-block;vertical-align:middle;position:relative;text-align:left;background:#fff;z-index:100;width:100%;max-width:500px;-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;margin:0 0 1rem 0;}
 div.cs-select:focus{outline:none; /* For better accessibility add a style for this in your skin */}
-.cs-select.cs-active{
-  height: 144px;
-}
+.cs-select.cs-active{height:144px;}
 .cs-select select{display:none;}
 .cs-select span{display:block;position:relative;cursor:pointer;padding:1em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;border-bottom:1px solid #e8e8e8;}
 
@@ -104,7 +113,9 @@ div.cs-select:focus{outline:none; /* For better accessibility add a style for th
 .cs-select.cs-active .cs-options{visibility:visible;}
 .cs-select ul{list-style:none;margin:0;padding:0;width:100%;}
 .cs-select ul span{padding:1em;}
-.cs-select{ul{li:hover{background:$color_picton_blue_approx;color:#fff;}}}
+.cs-select{ul{li:hover{background:$color_picton_blue_approx;color:#fff;}
+  }
+}
 .cs-select ul li.cs-focus span{background-color:#ddd;}
 
 /* Optgroup and optgroup label */

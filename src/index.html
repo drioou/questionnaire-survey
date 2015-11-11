@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <title>问卷制作-学而思培优</title>
     <meta name="author" content="duanyong">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+
     <link href="http://www.speiyou.com/images/favicon.ico" type="image/x-icon" rel="icon">
     <link href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
@@ -260,11 +262,27 @@
                     <select class="cs-select cs-skin-underline">
                         <option value="" disabled selected>请选择</option>
                         <option value="1">文档 </option>
-                        <option value="2">文字</option>
+                        <option value="2">图片</option>
+                        <option value="3">文字</option>
+                        <option value="4">视频</option>
                     </select>
                     <div class="file">
                         <div class="form-group">
                             <input defaultValue="上传" type="file" id="inputFile" type="submit"></input>
+                            <div class="input-group">
+                                <span class="input-group-addon">说明</span>
+                                <input type="text" class="form-control">
+                            </div>
+                            <button type="submit" class="btn">提交</button>
+                        </div>
+                    </div>
+                    <div class="pic">
+                        <div class="form-group">
+                            <input defaultValue="上传" type="file" id="inputFile" type="submit"></input>
+                            <div class="input-group">
+                                <span class="input-group-addon">说明</span>
+                                <input type="text" class="form-control">
+                            </div>
                             <button type="submit" class="btn">提交</button>
                         </div>
                     </div>
@@ -281,10 +299,23 @@
                             </div>
                         </div>
                     </div>
+                    <div class="video">
+                        <div class="form-group">
+                            <input defaultValue="上传" type="file" id="inputFile" type="submit"></input>
+                            <div class="input-group">
+                                <span class="input-group-addon">说明</span>
+                                <input type="text" class="form-control">
+                            </div>
+                            <button type="submit" class="btn">提交</button>
+                        </div>
+                    </div>
                 </div>
+                <div class="make"><i class="fa fa-copyright"></i>学而思培优(上海市场部)</div>
             </div>
         </div>
+
     </div>
+
     <script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="js/modernizr.js"></script>

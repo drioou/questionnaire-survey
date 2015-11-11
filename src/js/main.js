@@ -214,9 +214,24 @@
         } else if (this.selPlaceholder.textContent == "文档") {
           $(txtparent).find(".file").show();
           $(txtparent).find(".txt").hide();
+          $(txtparent).find(".video").hide();
+          $(txtparent).find(".pic").hide();
+
         } else if (this.selPlaceholder.textContent == "文字") {
           $(txtparent).find(".txt").show();
           $(txtparent).find(".file").hide();
+          $(txtparent).find(".video").hide();
+          $(txtparent).find(".pic").hide();
+        } else if (this.selPlaceholder.textContent == "视频") {
+          $(txtparent).find(".txt").hide();
+          $(txtparent).find(".file").hide();
+          $(txtparent).find(".video").show();
+          $(txtparent).find(".pic").hide();
+        } else if (this.selPlaceholder.textContent == "图片") {
+          $(txtparent).find(".txt").hide();
+          $(txtparent).find(".file").hide();
+          $(txtparent).find(".video").hide();
+          $(txtparent).find(".pic").show();
         }
 
       }
@@ -299,12 +314,12 @@ var createSelect = function() {
 };
 createSelect();
 
-  // click add===========
+// click add===========
 $(".btn.add").on("click", function() {
-  $(".q3.none").first().removeClass("none");
+  $(".q3.none").last().removeClass("none");
 });
 
 // close============
-$(".close").on("click",function(){
+$(".close").on("click", function() {
   $(this).parent().addClass("none");
 });
