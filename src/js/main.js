@@ -1,8 +1,5 @@
 ;
 (function(window) {
-
-  'use strict';
-
   /**
    * based on from https://github.com/inuyaksa/jquery.nicescroll/blob/master/jquery.nicescroll.js
    */
@@ -173,47 +170,6 @@
         self._toggleSelect();
       }
     });
-
-    // keyboard navigation events
-    // this.selEl.addEventListener('keydown', function(ev) {
-    //   var keyCode = ev.keyCode || ev.which;
-
-    //   switch (keyCode) {
-    //     // up key
-    //     case 38:
-    //       ev.preventDefault();
-    //       self._navigateOpts('prev');
-    //       break;
-    //       // down key
-    //     case 40:
-    //       ev.preventDefault();
-    //       self._navigateOpts('next');
-    //       break;
-    //       // space key
-    //     case 32:
-    //       ev.preventDefault();
-    //       if (self._isOpen() && typeof self.preSelCurrent != 'undefined' && self.preSelCurrent !== -1) {
-    //         self._changeOption();
-    //       }
-    //       self._toggleSelect();
-    //       break;
-    //       // enter key
-    //     case 13:
-    //       ev.preventDefault();
-    //       if (self._isOpen() && typeof self.preSelCurrent != 'undefined' && self.preSelCurrent !== -1) {
-    //         self._changeOption();
-    //         self._toggleSelect();
-    //       }
-    //       break;
-    //       // esc key
-    //     case 27:
-    //       ev.preventDefault();
-    //       if (self._isOpen()) {
-    //         self._toggleSelect();
-    //       }
-    //       break;
-    //   }
-    // });
   }
 
   /**
@@ -279,52 +235,49 @@
    * change option - the new value is set
    */
   SelectFx.prototype._changeOption = function() {
-    // if pre selected current (if we navigate with the keyboard)...
-    if (typeof this.preSelCurrent != 'undefined' && this.preSelCurrent !== -1) {
-      this.current = this.preSelCurrent;
-      this.preSelCurrent = -1;
-    }
-
-    // current option
-    var opt = this.selOpts[this.current];
-
-    // update current selected value
-    this.selPlaceholder.textContent = opt.textContent;
-
-    // change native select element´s value
-    this.el.value = opt.getAttribute('data-value');
-
-    // remove class cs-selected from old selected option and add it to current selected option
-    var oldOpt = this.selEl.querySelector('li.cs-selected');
-    if (oldOpt) {
-      classie.remove(oldOpt, 'cs-selected');
-    }
-    classie.add(opt, 'cs-selected');
-
-    // if there´s a link defined
-    if (opt.getAttribute('data-link')) {
-      // open in new tab?
-      if (this.options.newTab) {
-        window.open(opt.getAttribute('data-link'), '_blank');
-      } else {
-        window.location = opt.getAttribute('data-link');
+      // if pre selected current (if we navigate with the keyboard)...
+      if (typeof this.preSelCurrent != 'undefined' && this.preSelCurrent !== -1) {
+        this.current = this.preSelCurrent;
+        this.preSelCurrent = -1;
       }
+
+      // current option
+      var opt = this.selOpts[this.current];
+
+      // update current selected value
+      this.selPlaceholder.textContent = opt.textContent;
+
+      // change native select element´s value
+      this.el.value = opt.getAttribute('data-value');
+
+      // remove class cs-selected from old selected option and add it to current selected option
+      var oldOpt = this.selEl.querySelector('li.cs-selected');
+      if (oldOpt) {
+        classie.remove(oldOpt, 'cs-selected');
+      }
+      classie.add(opt, 'cs-selected');
+
+      // if there´s a link defined
+      if (opt.getAttribute('data-link')) {
+        // open in new tab?
+        if (this.options.newTab) {
+          window.open(opt.getAttribute('data-link'), '_blank');
+        } else {
+          window.location = opt.getAttribute('data-link');
+        }
+      }
+      // callback
+      this.options.onChange(this.el.value);
     }
-
-    // callback
-    this.options.onChange(this.el.value);
-  }
-
-  /**
-   * returns true if select element is opened
-   */
+    /**
+     * returns true if select element is opened
+     */
   SelectFx.prototype._isOpen = function(opt) {
-    return classie.has(this.selEl, 'cs-active');
-  }
-
-  /**
-   * removes the focus class from the option
-   */
+      return classie.has(this.selEl, 'cs-active');
+    }
+    /**
+     * removes the focus class from the option
+     */
   SelectFx.prototype._removeFocus = function(opt) {
     var focusEl = this.selEl.querySelector('li.cs-focus')
     if (focusEl) {
@@ -346,12 +299,12 @@ var createSelect = function() {
 };
 createSelect();
 
+  // click add===========
 $(".btn.add").on("click", function() {
-  $(this).after("<div class='form-group q3'><select class='cs-select cs-skin-underline'><option value=' disabled='disabled' selected='selected'>请选择</option><option value='1' class='fa fa-check-square-o'>单选</option><option value='2' class='fa fa fa-pencil'>填空</option></select><div class='single'><div class='form-group'><div class='input-group title'><span class='input-group-addon'>填空标题</span> <input type='text' class='form-control'></div></div><div class='form-group'><button type='submit' class='btn'>保存</button></div></div><div class='fill'><div class='form-group'><div class='input-group title'><span class='input-group-addon'>单选标题</span> <input type='text' class='form-control'></div></div><div class='form-group'><div class='input-group'><span class='input-group-addon'>选项A</span> <input type='text' class='form-control'></div></div><div class='form-group'><div class='input-group'><span class='input-group-addon'>选项B</span> <input type='text' class='form-control'></div></div><div class='form-group'><div class='input-group'><span class='input-group-addon'>选项C</span> <input type='text' class='form-control'></div></div><div class='form-group'><div class='input-group'><span class='input-group-addon'>选项D</span> <input type='text' class='form-control'></div></div><div class='form-group'><button type='submit' class='btn'>保存</button></div></div></div>");
-  ($(this).next().find('select.cs-select')).ready(function(el) {
-    new SelectFx(el);
-  });
+  $(".q3.none").first().removeClass("none");
+});
 
-
-
+// close============
+$(".close").on("click",function(){
+  $(this).parent().addClass("none");
 });
