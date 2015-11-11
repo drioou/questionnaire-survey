@@ -138,9 +138,10 @@
     this.selEl.className = this.el.className;
     this.selEl.tabIndex = this.el.tabIndex;
     this.selEl.innerHTML = '<span class="cs-placeholder">' + this.selectedOpt.textContent + '</span>' + opts_el;
-    this.el.parentNode.innerHTML(this.selEl);
-    this.selEl.innerHTML(this.el);
-    console.log( this.el );
+    // console.log( this.el.parentNode );
+    $(this.el).parent().prepend(this.selEl);
+    $(this.selEl).prepend(this.el);
+    // console.log( this.el );
   }
 
 
