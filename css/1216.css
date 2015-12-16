@@ -1,6 +1,7 @@
-.component{position:relative;z-index:1;width:300px;height:500px;marign:0 auto;}
-.morpher_button{fill:#fff;}
-.button{font-weight:bold;position:absolute;bottom:4px;left:20px;width:calc(100%-40px);height:60px;padding:0;text-align:center;color:#00A7E7;border:none;background:none;transition:opacity .3s;-webkti-tap-highlight-color:rgba(0,0,0,0);}
+
+.component{position:relative;z-index:1;width:300px;height:500px;margin:0 auto;background: #00a7e7;}
+.morph_button{fill:#fff;}
+.button{font-weight:bold;position:absolute;bottom:4px;left:20px;width:calc(100% - 40px);height:60px;padding:0;text-align:center;color:#00A7E7;border:none;background:none;transition:opacity .3s;-webkti-tap-highlight-color:rgba(0,0,0,0);}
 .button:hover,.button:focus{outline:none;color:#048abd;}
 .button--listen{poiner-events:none;}
 .button--close{z-index:10;top:0px;right:0px;left:auto;width:40px;height:40px;padding:10px;color:#Fff;}
@@ -44,4 +45,44 @@
     margin-top: -1px;border-radius: 5px 5px 0 0;
 }
 .player_meta{padding: 0 1em 1em;text-align:center;}
+.player_track{
+    font-size: 1.15em;margin:1.25em 0 0.05em 0;
+    color:#55656c;
+}
+.player_album{
+    font-size: 0.825em;margin:0;color:#bbc1c3;
+}
+.player_ablum-name,
+.player_artist{
+    color:#adb5b8;
+}
+.player_controls{
+    font-size: 1.15em;marign:1.15em 0 0;
+}
+.player_control{
+    margin:0 0.85em;padding:0;vertical-align: middle;color: #adb5b8;border:0;background: none;
+}
+.player_control:hover,
+.player_control:focus{
+    color:#99a7e7;
+    outline: none;
+}
+.player_control--play{
+    font-size: 1.75em;
+}
+.notes{
+    position: absolute;z-index: -1;bottom:0;left:50%;width:100px;height: 60px;margin:0 0 0 -50px;
+}
+.note{
+    font-size: 2.8em;position: absolute;left: 50%;width:1em;margin:0 0 0 -0.5em;opacity: 0;color:rgba(255,255,255,0.75);
+}
+.note:nth-child(odd){
+    color:rgba(0,0,0,0.1);
+}
+.note:nth-child(4n){
+    font-size: 2em;
+}
+.note:nth-child(6n){
+    color:rgba(255,255,255,0.3);
+}
 
